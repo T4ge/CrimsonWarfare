@@ -1,0 +1,39 @@
+#Category
+tc.research_category.crimson_warfare=Crimson Warfare
+
+#Names
+tc.research_name.CULTISTSWORD=Cultist Sword
+tc.research_name.CRIMSONSWORD=Crimson Sword
+tc.research_name.CRIMSONGREATSWORD=Cultist Greatsword
+tc.research_name.CRIMSONBATTLEAXE=Cultist Battleaxe
+tc.research_name.CWFAKECRIMSON=The Crimson Cult
+tc.research_name.ASPECTWAR=Offensive Tactics
+tc.research_name.ASPECTSHIELD=Defensive Tactics
+tc.research_name.CRIMSONHELM=Crimson Cult Helm
+tc.research_name.CRIMSONCHEST=Crimson Cult Chestplate
+tc.research_name.CRIMSONLEGS=Crimson Cult Greaves
+tc.research_name.CRIMSONBOOTS=Crimson Cult Boots
+
+#Text
+tc.research_text.CWFAKECRIMSON=A Cautionary Tale
+tc.research_text.CULTISTSWORD=Magic? Nooo
+tc.research_text.CRIMSONSWORD=Copycat!
+tc.research_text.CRIMSONGREATSWORD=Does it swing?
+tc.research_text.CRIMSONBATTLEAXE=Not for wood!
+tc.research_text.ASPECTWAR=Get rekt!
+tc.research_text.ASPECTSHIELD=Playing it safe
+tc.research_text.CRIMSONHELM=Making
+tc.research_text.CRIMSONCHEST=The
+tc.research_text.CRIMSONLEGS=Unavilable
+tc.research_text.CRIMSONBOOTS=Available
+
+#Research
+tc.research_page.CULTISTSWORD.1=You've found yourself quite.. fond.. of the Crimson Knights' armour; it's almost unreasonable to not have a matching sword, but you think you have found a fix for that!<BR><BR>After finding the strange Ritual Book you scavenged off one of the dead bodies in your encounter with the Crimson Cult, you've been able to learn their most beloved secrets when it comes to colouring and how to apply it.
+
+#Items
+item.crimson_sword.name=Crimson Knight Blade
+item.cultist_sword.name=Darkened Knight Blade
+item.crimson_cleaver.name=Crimson Cleaver
+item.crimson_hammer.name=Crimson Skullcrusher
+item.crimson_battleaxe.name=Crimson Battleaxe
+item.crimson_bow.name=Crimson Bow
