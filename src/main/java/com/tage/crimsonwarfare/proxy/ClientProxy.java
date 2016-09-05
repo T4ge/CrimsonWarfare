@@ -8,10 +8,12 @@ import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 
+import com.tage.crimsonwarfare.blocks.Candle;
 import com.tage.crimsonwarfare.entity.EntityKnight;
 import com.tage.crimsonwarfare.entity.projectiles.EtherealArrow;
 import com.tage.crimsonwarfare.event.client.EventHandler_VFX;
 import com.tage.crimsonwarfare.init.Init;
+import com.tage.crimsonwarfare.references.Reference.References;
 import com.tage.crimsonwarfare.renders.CandleItemRenderer;
 import com.tage.crimsonwarfare.renders.CandleTileRender;
 import com.tage.crimsonwarfare.renders.RenderEtherealArrow;
@@ -38,9 +40,11 @@ public class ClientProxy extends CommonProxy
 		MinecraftForgeClient.registerItemRenderer(com.tage.crimsonwarfare.init.Init.crimson_battleaxe, (IItemRenderer)new RendererBattleAxe());
 		MinecraftForgeClient.registerItemRenderer(com.tage.crimsonwarfare.init.Init.crimson_hammer, (IItemRenderer)new RendererHammer());
 		MinecraftForgeClient.registerItemRenderer(com.tage.crimsonwarfare.init.Init.crimson_bow, (IItemRenderer)new RendererBow());
-		System.out.println("Rendering Arrow");
+		
+		
+		//RenderingRegistry.registerBlockHandler(Candle.class, new CandleTileRender());
+		
 		RenderingRegistry.registerEntityRenderingHandler(EtherealArrow.class, new RenderEtherealArrow());
-		System.out.println("Arrow Rendered");
 		RenderingRegistry.registerEntityRenderingHandler(EntityKnight.class, new RenderMobKnight(new ModelBiped(), 0));
 		
 		MinecraftForge.EVENT_BUS.register(new EventHandler_VFX());

@@ -52,8 +52,6 @@ public class MainCrimsonWarfare
 			Init.initTools();
 			Init.initMaterial();
 			
-			EntityInit.mainRegistry();
-			
 			//DimRegistry.registerDimension();
 			
 			FMLInterModComms.sendMessage("CrimsonWarfare", "championWhiteList", "CrimsonWarfare.Knight:100");
@@ -64,13 +62,14 @@ public class MainCrimsonWarfare
 	@EventHandler
 		public void init(FMLInitializationEvent event)
 		{
-			proxy.registerRenderThings();
+			EntityInit.mainRegistry();
 			LogHelper.info("Initialization Complete!");
 		}
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 		{
+			proxy.registerRenderThings();
 			Research.registerRecipes();
 			Research.setupResearchPages();
 			Research.addResearchItem();

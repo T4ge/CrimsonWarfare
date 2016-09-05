@@ -7,6 +7,7 @@ import thaumcraft.api.aspects.AspectList;
 
 import com.tage.crimsonwarfare.blocks.AncientBlock;
 import com.tage.crimsonwarfare.blocks.AncientStair;
+import com.tage.crimsonwarfare.blocks.BlockCandle;
 import com.tage.crimsonwarfare.blocks.Candle;
 import com.tage.crimsonwarfare.blocks.Fences;
 import com.tage.crimsonwarfare.blocks.InvisibleWall;
@@ -61,7 +62,7 @@ public class Init {
 	//public static Block ancientblock = new AncientBlock(Material.rock);
 	//public static BlockStairs ancientstair = new AncientStair(Blocks.bookshelf, 0);
 	public static Block invisiblebarrier = new InvisibleWall(Material.dragonEgg);
-	public static Block candle = new Candle(Material.glass);
+	public static Block candle = new BlockCandle();
 	public static Block warphole = new WarpHole(Material.rock);
 	
 	//Materials

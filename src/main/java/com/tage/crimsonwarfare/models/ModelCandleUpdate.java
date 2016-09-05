@@ -112,6 +112,29 @@ public class ModelCandleUpdate extends ModelBase {
         this.shape14.render(f5);
 
         this.shape18.render(f5);
+        //this.Floor.render(f5);
+
+        this.shape11.render(f5);
+        this.shape7.render(f5);
+        this.shape8_1.render(f5);
+        this.shape1.render(f5);
+        this.shape3.render(f5);
+
+        this.shape10.render(f5);
+        this.shape5.render(f5);
+        this.shape2.render(f5);
+    }
+    
+    public void renderFloor(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+        //this.WallMount1.render(f5);
+        this.shape16.render(f5);
+        this.shape17.render(f5);
+        this.shape15.render(f5);
+
+        this.Banner.render(f5);
+        this.shape14.render(f5);
+
+        this.shape18.render(f5);
         this.Floor.render(f5);
 
         this.shape11.render(f5);
@@ -172,4 +195,9 @@ public class ModelCandleUpdate extends ModelBase {
         this.Flame4.render(f5);
         GL11.glPopMatrix();
     }
+
+	public void renderModel(float f) {
+		// TODO Auto-generated method stub
+		
+	}
 }

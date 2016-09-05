@@ -45,37 +45,30 @@ public class EtherealArrow extends Entity implements IProjectile
     private int knockbackStrength;
     private static final String __OBFID = "CL_00001715";
 
-    public EtherealArrow(World p_i1753_1_)
+    public EtherealArrow(World world)
     {
-        super(p_i1753_1_);
+        super(world);
         this.renderDistanceWeight = 10.0D;
         this.setSize(0.5F, 0.5F);
     }
 
-    public EtherealArrow(World p_i1754_1_, double p_i1754_2_, double p_i1754_4_, double p_i1754_6_)
-    {
-        super(p_i1754_1_);
-        this.renderDistanceWeight = 10.0D;
-        this.setSize(0.5F, 0.5F);
-        this.setPosition(p_i1754_2_, p_i1754_4_, p_i1754_6_);
-        this.yOffset = 0.0F;
-    }
 
-    public EtherealArrow(World p_i1755_1_, EntityLivingBase p_i1755_2_, EntityLivingBase p_i1755_3_, float p_i1755_4_, float p_i1755_5_)
-    {
-        super(p_i1755_1_);
-        this.renderDistanceWeight = 10.0D;
-        this.shootingEntity = p_i1755_2_;
 
-        if (p_i1755_2_ instanceof EntityPlayer)
+    public EtherealArrow(World world, EntityLivingBase entity, EntityLivingBase p_i1755_3_, float p_i1755_4_, float p_i1755_5_)
+    {
+        super(world);
+        this.renderDistanceWeight = 10.0D;
+        this.shootingEntity = entity;
+
+        if (entity instanceof EntityPlayer)
         {
             this.canBePickedUp = 1;
         }
 
-        this.posY = p_i1755_2_.posY + (double)p_i1755_2_.getEyeHeight() - 0.10000000149011612D;
-        double d0 = p_i1755_3_.posX - p_i1755_2_.posX;
+        this.posY = entity.posY + (double)entity.getEyeHeight() - 0.10000000149011612D;
+        double d0 = p_i1755_3_.posX - entity.posX;
         double d1 = p_i1755_3_.boundingBox.minY + (double)(p_i1755_3_.height / 3.0F) - this.posY;
-        double d2 = p_i1755_3_.posZ - p_i1755_2_.posZ;
+        double d2 = p_i1755_3_.posZ - entity.posZ;
         double d3 = (double)MathHelper.sqrt_double(d0 * d0 + d2 * d2);
 
         if (d3 >= 1.0E-7D)
@@ -84,13 +77,22 @@ public class EtherealArrow extends Entity implements IProjectile
             float f3 = (float)(-(Math.atan2(d1, d3) * 180.0D / Math.PI));
             double d4 = d0 / d3;
             double d5 = d2 / d3;
-            this.setLocationAndAngles(p_i1755_2_.posX + d4, this.posY, p_i1755_2_.posZ + d5, f2, f3);
+            this.setLocationAndAngles(entity.posX + d4, this.posY, entity.posZ + d5, f2, f3);
             this.yOffset = 0.0F;
             float f4 = (float)d3 * 0.2F;
             this.setThrowableHeading(d0, d1 + (double)f4, d2, p_i1755_4_, p_i1755_5_);
         }
     }
 
+    public EtherealArrow(World world, double x, double y, double z)
+    {
+        super(world);
+        this.renderDistanceWeight = 10.0D;
+        this.setSize(0.5F, 0.5F);
+        this.setPosition(x, y, z);
+        this.yOffset = 0.0F;
+    }
+    
     public EtherealArrow(World p_i1756_1_, EntityLivingBase p_i1756_2_, float p_i1756_3_)
     {
         super(p_i1756_1_);

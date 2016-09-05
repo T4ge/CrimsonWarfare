@@ -54,17 +54,17 @@ public class RenderEtherealArrow extends Render
 	
 	@Override
 	public void doRender(Entity var1, double x, double y, double z,	float whatAre, float theseFor) {
-		System.out.println("Rendering Arrow");
+		System.out.println("Rendering Arrow - doRender");
 		GL11.glPushMatrix();
 		Minecraft.getMinecraft().renderEngine.bindTexture(arrowTextures);
-		modelObj.renderAll();
+			GL11.glScalef(1.7f, 1.7f, 1.7f);
+			modelObj.renderAll();	
 		GL11.glPopMatrix();
 	}
 
 	@Override
-	protected ResourceLocation getEntityTexture(Entity var1) {
-		return null;
+	protected ResourceLocation getEntityTexture(Entity entity) {
+		return arrowTextures;
 	}
-
 }
 
