@@ -54,12 +54,12 @@ public class ClientProxy extends CommonProxy
                       new TileCandle()));
 		TileEntitySpecialRenderer renderCandle = new CandleTileRender();
 		ClientRegistry.bindTileEntitySpecialRenderer(TileCandle.class, new CandleTileRender());
-		
-		MinecraftForgeClient.registerItemRenderer(Items.diamond_sword, new RenderModItem());
-		MinecraftForgeClient.registerItemRenderer(Items.wooden_sword, new RenderModItem());
-		MinecraftForgeClient.registerItemRenderer(Items.stone_sword, new RenderModItem());
-		MinecraftForgeClient.registerItemRenderer(Items.iron_sword, new RenderModItem());
-		MinecraftForgeClient.registerItemRenderer(Items.golden_sword, new RenderModItem());
+		 																		     // Scale, x, y, z, texture()
+		//MinecraftForgeClient.registerItemRenderer(Items.diamond_sword, new RenderModItem());
+		//MinecraftForgeClient.registerItemRenderer(Items.wooden_sword, new RenderModItem());
+		//MinecraftForgeClient.registerItemRenderer(Items.stone_sword, new RenderModItem());
+		//MinecraftForgeClient.registerItemRenderer(Items.iron_sword, new RenderModItem());
+		//MinecraftForgeClient.registerItemRenderer(Items.golden_sword, new RenderModItem());
 	}
 	
 }

@@ -24,7 +24,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
-public class EtherealArrow extends Entity implements IProjectile
+public class EtherealArrow extends EntityArrow implements IProjectile
 {
 	private int field_145791_d = -1;
     private int field_145792_e = -1;
@@ -40,7 +40,7 @@ public class EtherealArrow extends Entity implements IProjectile
     public Entity shootingEntity;
     private int ticksInGround;
     private int ticksInAir;
-    private double damage = 2.0D;
+    private double damage = 3.5D;
     /** The amount of knockback an arrow applies when it hits a mob. */
     private int knockbackStrength;
     private static final String __OBFID = "CL_00001715";
@@ -52,8 +52,6 @@ public class EtherealArrow extends Entity implements IProjectile
         this.setSize(0.5F, 0.5F);
     }
 
-
-
     public EtherealArrow(World world, EntityLivingBase entity, EntityLivingBase p_i1755_3_, float p_i1755_4_, float p_i1755_5_)
     {
         super(world);
@@ -62,7 +60,7 @@ public class EtherealArrow extends Entity implements IProjectile
 
         if (entity instanceof EntityPlayer)
         {
-            this.canBePickedUp = 1;
+            this.canBePickedUp = 0;
         }
 
         this.posY = entity.posY + (double)entity.getEyeHeight() - 0.10000000149011612D;
@@ -101,7 +99,7 @@ public class EtherealArrow extends Entity implements IProjectile
 
         if (p_i1756_2_ instanceof EntityPlayer)
         {
-            this.canBePickedUp = 1;
+            this.canBePickedUp = 0;
         }
 
         this.setSize(0.5F, 0.5F);
@@ -116,7 +114,7 @@ public class EtherealArrow extends Entity implements IProjectile
         this.motionY = (double)(-MathHelper.sin(this.rotationPitch / 180.0F * (float)Math.PI));
         this.setThrowableHeading(this.motionX, this.motionY, this.motionZ, p_i1756_3_ * 1.5F, 1.0F);
     }
-
+    
     protected void entityInit()
     {
         this.dataWatcher.addObject(16, Byte.valueOf((byte)0));
@@ -514,7 +512,7 @@ public class EtherealArrow extends Entity implements IProjectile
      */
     public void onCollideWithPlayer(EntityPlayer p_70100_1_)
     {
-        if (!this.worldObj.isRemote && this.inGround && this.arrowShake <= 0)
+        /*if (!this.worldObj.isRemote && this.inGround && this.arrowShake <= 0)
         {
             boolean flag = this.canBePickedUp == 1 || this.canBePickedUp == 2 && p_70100_1_.capabilities.isCreativeMode;
 
@@ -529,7 +527,7 @@ public class EtherealArrow extends Entity implements IProjectile
                 p_70100_1_.onItemPickup(this, 1);
                 this.setDead();
             }
-        }
+        }*/
     }
 
     /**
@@ -578,16 +576,7 @@ public class EtherealArrow extends Entity implements IProjectile
      */
     public void setIsCritical(boolean p_70243_1_)
     {
-        byte b0 = this.dataWatcher.getWatchableObjectByte(16);
-
-        if (p_70243_1_)
-        {
-            this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 | 1)));
-        }
-        else
-        {
-            this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 & -2)));
-        }
+        
     }
 
     /**

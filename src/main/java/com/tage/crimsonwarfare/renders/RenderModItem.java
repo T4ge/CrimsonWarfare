@@ -12,21 +12,21 @@ import org.lwjgl.opengl.GL11;
 
 public class RenderModItem implements IItemRenderer
 {
-	private final float scale = 0.6F;
-	private final float t1 = -0.05F;
-	private final float t2 = 0.27F;
-	private final float t3 = 0.0F;
+	private float scale;
+	private float t1;
+	private float t2;
+	private float t3;
 
 	public RenderModItem() {
-		//this.scale = 0.70F;
-		//this.t1 = -0.11F;
-		//this.t2 = 0.3F;
-		//this.t3 = 0F;
+		this.scale = 0.8f;
+		this.t1 = 0f;
+		this.t2 = 0f;
+		this.t3 = 0f;
 	}
 
 	@Override
 	public boolean handleRenderType(ItemStack item, ItemRenderType type) {
-		return type == ItemRenderType.EQUIPPED || type == ItemRenderType.EQUIPPED_FIRST_PERSON || type == ItemRenderType.INVENTORY;
+		return type == ItemRenderType.EQUIPPED /*|| type == ItemRenderType.EQUIPPED_FIRST_PERSON || type == ItemRenderType.INVENTORY*/;
 	}
 
 	@Override
@@ -44,39 +44,24 @@ public class RenderModItem implements IItemRenderer
 		case EQUIPPED:
 			GL11.glRotatef(0.0F, 1.0F, 0.0F, 0.0F);
 			GL11.glRotatef(0F, 0.0F, 1.0F, 0.0F);
-			GL11.glRotatef(-13F, 0.0F, 0.0F, 1F);
-			
-			GL11.glTranslatef(t1, t2, t3);
+			GL11.glRotatef(-12F, 0.0F, 0.0F, 1F);
+			GL11.glScalef(this.scale, this.scale, this.scale);
+			GL11.glTranslatef(-0.3f, 0.2f, 0.045f);
 			
 			renderEquippedItem(item, (EntityLivingBase) data[1], false);
 			break;
-		case INVENTORY:
-			//GL11.glRotatef(0.0F, 1.0F, 0.0F, 0.0F);
-			//GL11.glRotatef(0F, 0.0F, 1.0F, 0.0F);
-			//GL11.glRotatef(-13F, 0.0F, 0.0F, 1F);
-			
-			//GL11.glTranslatef(t1, t2, t3);
-			
-			//renderEquippedItem(item, (EntityLivingBase) data[1], false);
 		default:
 		}
 	}
 
 	private void renderEquippedItem(ItemStack stack, EntityLivingBase entity, boolean firstPerson) {
 		GL11.glPushMatrix();
-		float f = scale;
+		float f = 1.2f;
 		
-		if (firstPerson) {
-			f *= 1.75F;
-			GL11.glTranslatef(-0.35F * scale, -0.125F * scale, 0.0F);
-		} else {
-			f *= (entity instanceof EntityPlayer ? 2.0F : 1.75F);
-			GL11.glTranslatef(1.0F - f, -0.125F * scale, 0.05F * scale);
-		}
 		GL11.glScalef(f, f, f);
 		IIcon icon = stack.getItem().getIcon(stack, 0);
 		Tessellator tessellator = Tessellator.instance;
-		//ItemRenderer.renderItemIn2D(tessellator, icon.getMaxU(), icon.getMinV(), icon.getMinU(), icon.getMaxV(), icon.getIconWidth(), icon.getIconHeight(), 0.0625F);
+		ItemRenderer.renderItemIn2D(tessellator, icon.getMaxU(), icon.getMinV(), icon.getMinU(), icon.getMaxV(), icon.getIconWidth(), icon.getIconHeight(), 0.0625F);
 		GL11.glPopMatrix();
 	}
 }
