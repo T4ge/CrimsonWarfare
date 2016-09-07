@@ -24,7 +24,7 @@ public class EntityInit{
 		createEntity(EntityKnight.class, "Knight", 0x595959, 0xb30000);
 		EntityRegistry.registerGlobalEntityID(EntityKnight.class, "Crimson Knight", EntityRegistry.findGlobalUniqueEntityId());
 		EntityRegistry.registerGlobalEntityID(EtherealArrow.class, "etherealarrow", EntityRegistry.findGlobalUniqueEntityId());
-		EntityRegistry.registerModEntity(EtherealArrow.class, "Throwing Rock", EntityRegistry.findGlobalUniqueEntityId(), References.MOD_ID, 64, 10, true);
+		EntityRegistry.registerModEntity(EtherealArrow.class, "Throwing Rock", EntityRegistry.findGlobalUniqueEntityId(), References.MOD_ID, 64, 20, true);
 		LanguageRegistry.instance().addStringLocalization("entity.Knight.name", "en_US", "Crimson Knight");
 	}
 	public static void createEntity(Class entityClass, String entityName, int solidColor, int spotColor) {
