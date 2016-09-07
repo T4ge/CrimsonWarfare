@@ -40,7 +40,7 @@ public class EtherealArrow extends EntityArrow implements IProjectile
     public Entity shootingEntity;
     private int ticksInGround;
     private int ticksInAir;
-    private double damage = 200.5D;
+    private double damage = 4.5D;
     /** The amount of knockback an arrow applies when it hits a mob. */
     private int knockbackStrength;
     private static final String __OBFID = "CL_00001715";

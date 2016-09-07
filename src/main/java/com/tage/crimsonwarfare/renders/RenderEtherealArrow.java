@@ -54,21 +54,19 @@ public class RenderEtherealArrow extends RenderArrow
 		modelObj = AdvancedModelLoader.loadModel(new ResourceLocation(References.MOD_ID +":" +"models/ModelEtherealArrowTri.obj"));
 	}
 	
-	 public void doRender(EtherealArrow entity, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-	    {	
-
-		 
+	public void doRender(EtherealArrow entity, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
+	    {
+		
 		Minecraft.getMinecraft().renderEngine.bindTexture(arrowTextures);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)p_76986_2_, (float)p_76986_4_, (float)p_76986_6_);
-
         
         GL11.glPushMatrix();
 		Minecraft.getMinecraft().renderEngine.bindTexture(arrowTextures);
 			GL11.glRotatef(-0f, 0.0F, 1.0F, 0.0F);
 			GL11.glRotatef(entity.prevRotationYaw + (entity.rotationYaw - entity.prevRotationYaw) * p_76986_9_ + 180f, 0.0F, 1.0F, 0.0F);
 			//GL11.glRotatef(entity.prevRotationPitch + (entity.prevRotationPitch - entity.prevRotationPitch) * p_76986_9_, 1.0F, 0F, 0.0F);
-        	//GL11.glRotatef(entity.prevRotationYaw + (entity.rotationYaw - entity.prevRotationYaw) * p_76986_9_ - 180.0F, 0.0F, 1.0F, 0.0F);
+			//GL11.glRotatef(entity.prevRotationYaw + (entity.rotationYaw - entity.prevRotationYaw) * p_76986_9_ - 180.0F, 0.0F, 1.0F, 0.0F);
 			GL11.glRotatef(entity.prevRotationPitch + (entity.rotationPitch - entity.prevRotationPitch) * p_76986_9_, 1.0F, 0.0F, 0F);
 			GL11.glTranslatef(2f, -2.075f, 1.0f);
 			GL11.glScalef(3.5f, 3.5f, 1.5f);
